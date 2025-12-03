@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            max-width: 90px;
+            height: 90px;
+            margin-right: 15px;
+        }
+        .header h3 {
+            margin: 5px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header h5 {
+            margin: 0;
+            font-size: 14px;
+        }
+        .title {
+            text-align: center;
+            text-decoration: underline;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 50px;
+            font-size: 16px;
+        }
+        .reason {
+            margin: 20px 50px;
+            font-size: 16px;
+        }
+        .reason strong {
+            font-size: 17px;
+            text-decoration: underline;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 60px 50px 20px;
+        }
+        .sign-box {
+            text-align: center;
+            width: 40%;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .sign-space {
+            width: 200px; 
+            height: 60px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: gray;
+        }
+        .sign-box p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="data:image/jpeg;base64,{{Imagedatapath}}" alt="Header Image">
+        <div>
+            <h3>REGISTRATIONS & STAMPS DEPARTMENT</h3>
+            <h5>GOVERNMENT OF ANDHRA PRADESH</h5>
+        </div>
+    </div>
+
+    <h3 class="title">Rescan Request Form</h3>
+
+    <div class="details">
+        <p><strong>District Name:</strong> {{DR_NAME}}</p>
+        <p><strong>SRO Name:</strong> {{SR_NAME}}</p>
+        <p><strong>Date:</strong> {{DATE}}</p>
+    </div>
+	
+    <div class="details">
+        <p><strong>Doct No:</strong> {{RDOCT_NO}}</p>
+        <p><strong>DR Name:</strong> {{DRO_NAME}}</p>
+    </div>
+
+    <div class="reason">
+        <p><strong>Request Reason:</strong></p>
+        <p>{{REQUEST_REASONS}}</p>
+    </div>
+
+    <div class="signatures">
+        <div class="sign-box">
+            <div class="sign-space"></div>
+            <p>Sub-Registrar</p>
+        </div>
+        <div class="sign-box">
+            <div class="sign-space"></div>
+            <p>District Registrar</p>
+        </div>
+    </div>
+</body>
+</html>

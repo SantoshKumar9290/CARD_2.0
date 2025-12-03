@@ -1,0 +1,33 @@
+const Status = require("http-status");
+
+let NAMES = {
+  VALIDATION_ERROR: "Validation Error",
+  NOT_FOUND: "NOT Found",
+  BAD_REQUEST: "Bad Request",
+  INTERNAL_SERVER_ERROR: "Internal Server Error",
+  EXTERNAL_REQUEST_ERROR: "External Request Error",
+  DUPLICATE_ERROR: "Already Exists",
+  UNKNOWN_ERROR: "Unknown Error",
+  UNAUTHORIZED: "Unauthorized"
+};
+
+let NAMES_STATUS_MAPPINGS = {
+  [NAMES.VALIDATION_ERROR]: Status.BAD_REQUEST,
+  [NAMES.NOT_FOUND]: Status.BAD_REQUEST,
+  [NAMES.BAD_REQUEST]: Status.BAD_REQUEST,
+  [NAMES.INTERNAL_SERVER_ERROR]: Status.INTERNAL_SERVER_ERROR,
+  [NAMES.EXTERNAL_REQUEST_ERROR]: Status.INTERNAL_SERVER_ERROR,
+  [NAMES.DUPLICATE_ERROR]: Status.CONFLICT,
+  [NAMES.UNKNOWN_ERROR]: Status.INTERNAL_SERVER_ERROR,
+  [NAMES.UNAUTHORIZED]: Status.UNAUTHORIZED
+};
+
+let STATUS_TO_NAME_MAPPING = Object.keys(NAMES_STATUS_MAPPINGS).reduce(
+  (acc, key) => {
+    acc[NAMES_STATUS_MAPPINGS[key]] = key;
+    return acc;
+  },
+  {}
+);
+
+module.exports = {NAMES,NAMES_STATUS_MAPPINGS,STATUS_TO_NAME_MAPPING}

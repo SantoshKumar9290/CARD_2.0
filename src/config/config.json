@@ -1,0 +1,6 @@
+{
+    "secret": "EURWRUOEWDBJKVSDKVBSVZMFWMFQNZXSVLSDHGWOGOWIG",
+    "refreshTokenSecret": "PEFPEWFEOSVJHVNCXEWRUYWQRQOGWIWEJVDSNVSGJR",
+    "tokenLife": 2700,
+    "refreshTokenLife": 1800
+}
